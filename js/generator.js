@@ -46,6 +46,16 @@ function generateItem(options) {
     features.push({ type: "gun", data: weightedPick(GUN_FEATURES) });
   }
 
+  // Ancient quality — always applies when ancient toggle is on
+  if (options.includeAncient) {
+    features.push({ type: "ancient", data: weightedPick(ANCIENT_FEATURES) });
+  }
+
+  // Shitty quality — always applies when shitty toggle is on
+  if (options.includeShitty) {
+    features.push({ type: "shitty", data: weightedPick(SHITTY_FEATURES) });
+  }
+
   // Drawback — always applies when curses toggle is on, never when off
   const drawbackEligible = base.curseAllowed !== false;
   if (drawbackEligible && options.includeCurses) {

@@ -7,6 +7,8 @@ function readOptions() {
     includeMagicWeapons: document.getElementById("magicToggle").checked,
     includeGuns: document.getElementById("gunsToggle").checked,
     includeCurses: document.getElementById("cursesToggle").checked,
+    includeAncient: document.getElementById("ancientToggle").checked,
+    includeShitty: document.getElementById("shittyToggle").checked,
     itemType: document.querySelector('input[name="itemType"]:checked').value
   };
 }

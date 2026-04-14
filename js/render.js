@@ -137,6 +137,8 @@ function featureTypePrefix(type) {
     case "magic":   return "✦ ";
     case "gun":     return "⚙ ";
     case "drawback": return "✖ ";
+    case "ancient":  return "◈ ";
+    case "shitty":   return "↓ ";
     default:        return "";
   }
 }
