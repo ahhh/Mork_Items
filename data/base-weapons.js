@@ -939,5 +939,215 @@ const BASE_WEAPONS = [
     magicAllowed: true,
     stats: { damage: "d10", durability: 9, ammo: 1, range: "far" },
     weight: 5
+  },
+    {
+    id: "bleak-dirge-blade",
+    name: "Bleak Dirge Blade",
+    category: "weapon",
+    tags: ["melee", "blade"],
+    description: "It hums a funeral tune that saps the will to strike twice.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 7 },
+    weight: 8
+  },
+  {
+    id: "sanity-shard-knife",
+    name: "Sanity-Shard Knife",
+    category: "weapon",
+    tags: ["melee", "blade", "small", "cursed"],
+    description: "Each cut feels worse to remember than to suffer.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d4", durability: 5 },
+    weight: 9
+  },
+  {
+    id: "crypt-warden-halberd",
+    name: "Crypt Warden Halberd",
+    category: "weapon",
+    tags: ["melee", "polearm", "reach"],
+    description: "Heavy with duty. Heavier with what it failed to guard.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d8", durability: 8 },
+    weight: 6
+  },
+  {
+    id: "stress-crack-whip",
+    name: "Stress-Crack Whip",
+    category: "weapon",
+    tags: ["melee", "flail", "reach"],
+    description: "The sound lands harder than the blow.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d4", durability: 6, range: "close" },
+    weight: 9
+  },
+  {
+    id: "blood-oath-cleaver",
+    name: "Blood-Oath Cleaver",
+    category: "weapon",
+    tags: ["melee", "blade", "heavy"],
+    description: "It expects commitment. It rarely gets it.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d8", durability: 7 },
+    weight: 7
+  },
+
+  // --- adjusted mid-tier examples ---
+
+  {
+    id: "grave-lantern-flail",
+    name: "Grave Lantern Flail",
+    category: "weapon",
+    tags: ["melee", "flail", "fire"],
+    description: "The light flickers when you need it most.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 6 },
+    weight: 8
+  },
+  {
+    id: "eldritch-bone-spear",
+    name: "Eldritch Bone Spear",
+    category: "weapon",
+    tags: ["melee", "polearm", "reach"],
+    description: "It points where you do not want to look.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 7 },
+    weight: 8
+  },
+  {
+    id: "madmans-razor",
+    name: "Madman's Razor",
+    category: "weapon",
+    tags: ["melee", "blade", "small"],
+    description: "Sharper in trembling hands.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d4+1", durability: 5 },
+    weight: 9
+  },
+  {
+    id: "leper-greatblade",
+    name: "Leper's Greatblade",
+    category: "weapon",
+    tags: ["melee", "blade", "heavy"],
+    description: "Massive, unwieldy, and often swung too late.",
+    firearm: false,
+    magicAllowed: false,
+    stats: { damage: "d10", durability: 7 },
+    weight: 5
+  },
+  {
+    id: "plague-vial-sling",
+    name: "Plague Vial Sling",
+    category: "weapon",
+    tags: ["thrown", "ranged"],
+    description: "Sometimes it breaks early. Sometimes not at all.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d4", durability: 5, range: "near" },
+    weight: 10
+  },
+
+  // --- more nerfed consistency ---
+
+  {
+    id: "confessor-mace",
+    name: "Confessor's Mace",
+    category: "weapon",
+    tags: ["melee", "hafted", "blunt"],
+    description: "It forgives nothing, including poor aim.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 8 },
+    weight: 9
+  },
+  {
+    id: "whispering-crossbow",
+    name: "Whispering Crossbow",
+    category: "weapon",
+    tags: ["ranged", "crossbow"],
+    description: "The whispers worsen when you miss.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 6, range: "far" },
+    weight: 7
+  },
+  {
+    id: "rotgut-dagger",
+    name: "Rotgut Dagger",
+    category: "weapon",
+    tags: ["melee", "blade", "small"],
+    description: "It leaves behind something that lingers.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d4+1", durability: 4 },
+    weight: 10
+  },
+
+  // --- heavier weapons brought down ---
+
+  {
+    id: "iron-dirge-hammer",
+    name: "Iron Dirge Hammer",
+    category: "weapon",
+    tags: ["melee", "hafted", "heavy"],
+    description: "Each strike sounds final. It rarely is.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d8", durability: 9 },
+    weight: 6
+  },
+  {
+    id: "abyss-hook",
+    name: "Abyss Hook",
+    category: "weapon",
+    tags: ["melee", "hooked", "polearm"],
+    description: "Pulls more than you intended.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 7 },
+    weight: 8
+  },
+
+  // --- firearms toned down ---
+
+  {
+    id: "last-rites-pistol",
+    name: "Last Rites Pistol",
+    category: "weapon",
+    tags: ["ranged", "firearm", "pistol"],
+    description: "Saved for the end. Often used too soon.",
+    firearm: true,
+    magicAllowed: true,
+    stats: { damage: "d8", durability: 6, ammo: 1, range: "close" },
+    weight: 7
+  },
+  {
+    id: "coffin-nail-thrower",
+    name: "Coffin Nail Thrower",
+    category: "weapon",
+    tags: ["ranged", "improvised"],
+    description: "The nails bend more often than they pierce.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d4", durability: 5, range: "near" },
+    weight: 9
+  },
+  {
+    id: "final-confession-blade",
+    name: "Final Confession Blade",
+    category: "weapon",
+    tags: ["melee", "blade", "cursed"],
+    description: "It waits for hesitation.",
+    firearm: false,
+    magicAllowed: true,
+    stats: { damage: "d6", durability: 6 },
+    weight: 7
   }
 ];
