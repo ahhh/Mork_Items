@@ -590,7 +590,7 @@ const BASE_WEAPONS = [
   },
   {
     id: "rib-cage-buckler",
-    name: "Rib-Cage Shield Spike",
+    name: "Rib-Cage Spike",
     category: "weapon",
     tags: ["melee", "improvised", "blade"],
     description: "A spike of rib bone, braced and bound to the fist. It hurts to hold.",
@@ -601,7 +601,7 @@ const BASE_WEAPONS = [
   },
   {
     id: "monks-thurible",
-    name: "Monk's Iron Thurible",
+    name: "Iron Thurible",
     category: "weapon",
     tags: ["melee", "blunt", "improvised"],
     description: "Swung on its chain, it still smells of burnt incense over the blood.",
