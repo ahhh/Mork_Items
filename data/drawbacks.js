@@ -1,0 +1,52 @@
+const DRAWBACKS = [
+  // --- Temporal / daily effects ---
+  { id: "drain-hp-dawn", label: "Drains HP at Dawn", description: "At each dawn, the carrier loses 1 HP. The item feeds on the living.", weight: 5 },
+  { id: "drain-hp-dusk", label: "Drains HP at Dusk", description: "Each dusk, the carrier loses 1 HP and feels briefly cold all over.", weight: 5 },
+  { id: "no-sleep", label: "Prevents Restful Sleep", description: "As long as it is carried, the bearer cannot sleep deeply enough to fully recover.", weight: 5 },
+  { id: "hungry-sacrifice", label: "Hungry for Sacrifice", description: "Once per day it must taste blood — the bearer's if nothing else is provided.", weight: 4 },
+  { id: "pulls-midnight", label: "Pulls Toward Midnight", description: "The carrier feels a compulsion to head toward the nearest graveyard at midnight. Resisting requires effort.", weight: 5 },
+  // --- Social / perception ---
+  { id: "attracts-flies", label: "Attracts Flies and Omens", description: "Flies gather around whoever carries it. Animals grow uneasy. Bad signs occur nearby.", weight: 7 },
+  { id: "marks-guilty", label: "Marks the Carrier as Guilty", description: "Anyone who sees the carrier assumes they have done something terrible. They are not entirely wrong.", weight: 6 },
+  { id: "hated-priests", label: "Hated by Priests", description: "All religious figures who see the carrier immediately dislike them. Strongly.", weight: 6 },
+  { id: "hated-animals", label: "Hated by Animals", description: "Animals become aggressive or flee. Dogs bark. Horses refuse to carry the bearer.", weight: 6 },
+  { id: "impossible-conceal", label: "Impossible to Conceal", description: "No matter how it is wrapped or packed, someone always notices it.", weight: 7 },
+  { id: "reeks-death", label: "Reeks of Death", description: "A persistent smell of decomposition surrounds whoever carries it.", weight: 7 },
+  { id: "makes-children-cry", label: "Makes Children Weep", description: "Any child who sees the carrier begins to cry without knowing why.", weight: 6 },
+  { id: "loud-bearer", label: "Makes the Bearer Louder", description: "The carrier's footsteps, breathing, and movements are slightly amplified. Stealth is harder.", weight: 6 },
+  // --- Physical consequences ---
+  { id: "breaks-crit-fail", label: "Breaks on Critical Failure", description: "On a fumble or critical failure, the item shatters, cracks, or falls apart permanently.", weight: 7 },
+  { id: "bruises-holder", label: "Bruises the Holder", description: "Each time it is picked up, the carrier gains a small bruise where they grip it.", weight: 8 },
+  { id: "cold-hands", label: "Causes Numb Hands", description: "The hand holding it loses feeling after prolonged use. -1 to fine manipulations.", weight: 6 },
+  { id: "weighs-more", label: "Grows Heavier Over Time", description: "The longer it is carried in one stretch, the heavier it becomes.", weight: 6 },
+  { id: "rusts-nearby", label: "Rusts Nearby Iron", description: "Other iron and steel items carried alongside it rust faster.", weight: 5 },
+  { id: "spoils-food", label: "Spoils Food", description: "Any food stored near it for more than a few hours goes bad.", weight: 6 },
+  // --- Mental / psychological ---
+  { id: "paranoia-curse", label: "Instills Paranoia", description: "The carrier begins to feel watched whenever it is in their possession.", weight: 5 },
+  { id: "forgetful", label: "Causes Forgetfulness", description: "Small memories slip away while it is carried. Nothing important, at first.", weight: 5 },
+  { id: "whispers-wrong", label: "Whispers Wrong Names", description: "In quiet moments, it murmurs the names of people the carrier should not think about.", weight: 5 },
+  { id: "nightmares", label: "Causes Nightmares", description: "Every night it is kept, the bearer dreams of something they would rather not see.", weight: 6 },
+  { id: "compulsion-count", label: "Compulsion to Count", description: "The bearer feels compelled to count things — steps, stones, people. Hard to stop mid-count.", weight: 6 },
+  { id: "cold-dread", label: "Cold Dread", description: "A persistent feeling that something is behind you. Something is not behind you. Probably.", weight: 6 },
+  { id: "fear-water", label: "Instills Fear of Water", description: "The carrier becomes uncomfortable near large bodies of water. Grows into avoidance.", weight: 5 },
+  // --- Interaction effects ---
+  { id: "cannot-give-away", label: "Cannot Be Given Away", description: "Any attempt to voluntarily pass it to another person fails. It returns.", weight: 4 },
+  { id: "cannot-sell", label: "Refuses to Be Sold", description: "Merchants who try to appraise it forget its value. Trades involving it fall apart.", weight: 4 },
+  { id: "attracts-undead", label: "Attracts the Restless Dead", description: "The undead are drawn toward whoever carries it. They do not attack immediately.", weight: 4 },
+  { id: "draws-attention-wrong", label: "Draws Attention at Wrong Moments", description: "Once per session, the GM may decide it catches someone's eye at the worst possible time.", weight: 6 },
+  { id: "breaks-locks", label: "Breaks Locks Nearby", description: "Locks near the carrier malfunction. Doors jam. Manacles tighten.", weight: 6 },
+  // --- Systemic / mechanical ---
+  { id: "fragile", label: "Fragile", description: "One step less durable than normal. Breaks on a failed durability roll.", weight: 7 },
+  { id: "unlucky", label: "Unlucky", description: "Once per session, one die roll made while carrying this item is made at disadvantage.", weight: 5 },
+  { id: "heavy-curse", label: "Heavy", description: "Counts as two burden items instead of one.", weight: 7 },
+  { id: "loud", label: "Loud", description: "Produces noise when used or even carried. -2 to all stealth attempts.", weight: 7 },
+  { id: "malfunctions-rain", label: "Malfunctions in Rain", description: "Wet conditions cause it to fail, jam, or stop working temporarily.", weight: 7 },
+  { id: "bleeds-user", label: "Bleeds the User", description: "Using it correctly deals 1 damage to the carrier as a side effect.", weight: 5 },
+  { id: "limited-use", label: "Limited Uses", description: "Reveals itself to have far fewer uses remaining than expected.", weight: 6 },
+  { id: "recognized", label: "Recognized by Authorities", description: "The item is on a list somewhere. Being seen with it invites official attention.", weight: 5 },
+  { id: "marked-heretic", label: "Marks the Owner as Heretic", description: "Church authority, on sight, considers whoever carries this a heretic. Evidence has been submitted.", weight: 4 },
+  { id: "no-fire", label: "Extinguishes Fire Near It", description: "Candles and torches within close proximity gutter and die when it is drawn or opened.", weight: 5 },
+  { id: "lost-easily", label: "Easily Lost", description: "Roll to find it each morning. On a failure, it has wandered to the bottom of a pack or fallen somewhere.", weight: 6 },
+  { id: "draws-weather", label: "Draws Bad Weather", description: "The bearer has had noticeably worse weather than everyone around them since acquiring this.", weight: 5 },
+  { id: "speaks-secrets", label: "Speaks Your Secrets", description: "Occasionally — in crowds, in silence — it speaks aloud something the carrier wanted kept private.", weight: 4 }
+];

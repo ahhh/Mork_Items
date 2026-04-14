@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MÖRK BORG Item Generator</title>
+  <meta name="description" content="A random item generator for MÖRK BORG. Weapons, relics, and grim curiosities at the click of a button.">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <!-- Header -->
+    <header class="site-header">
+      <h1 class="site-title">MÖRK BORG<br>Item Generator</h1>
+      <p class="site-tagline">Weapons, relics, and grim curiosities for a dying world.</p>
+    </header>
+
+    <!-- Controls -->
+    <section class="controls-section" aria-label="Generator options">
+      <fieldset>
+        <legend>Generator Options</legend>
+
+        <!-- Toggles -->
+        <div class="control-group">
+          <span class="control-group__label">Include</span>
+
+          <label class="checkbox-label">
+            <input type="checkbox" id="magicToggle" checked>
+            Magic weapons
+          </label>
+
+          <label class="checkbox-label">
+            <input type="checkbox" id="gunsToggle" checked>
+            Firearms &amp; guns
+          </label>
+
+          <label class="checkbox-label">
+            <input type="checkbox" id="cursesToggle" checked>
+            Curses
+          </label>
+        </div>
+
+        <!-- Item type -->
+        <div class="control-group">
+          <span class="control-group__label" id="itemTypeLabel">Item type</span>
+          <div class="radio-group" role="group" aria-labelledby="itemTypeLabel">
+            <label class="radio-label">
+              <input type="radio" name="itemType" value="all" checked>
+              All items
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="itemType" value="weapon">
+              Weapons only
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="itemType" value="non-weapon">
+              Non-weapons only
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <button id="generateBtn" class="generate-btn" type="button">
+        Generate Item
+      </button>
+    </section>
+
+    <!-- Result -->
+    <section aria-label="Generated item" aria-live="polite">
+      <p id="resultPlaceholder">Press <strong>Generate Item</strong> to draw from the darkness.</p>
+
+      <div id="resultSection" hidden>
+        <div class="item-header">
+          <h2 id="itemName"></h2>
+          <p id="itemTags"></p>
+        </div>
+
+        <p id="itemDescription" class="item-description"></p>
+
+        <dl id="statsBlock"></dl>
+
+        <div id="featuresBlock" hidden></div>
+
+        <div class="item-actions">
+          <button id="rerollBtn" class="action-btn" type="button" hidden>Reroll Stats</button>
+          <button id="copyBtn" class="action-btn" type="button" hidden>Copy Item Text</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>
+        An unofficial fan tool. MÖRK BORG is published by
+        <a href="https://morkborg.com" target="_blank" rel="noopener">Free League Publishing</a>
+        and designed by Johan Nohr &amp; Pelle Nilsson.
+        This generator is not affiliated with or endorsed by Free League.
+      </p>
+      <p style="margin-top:0.5rem;">
+        <a href="https://github.com" target="_blank" rel="noopener">View on GitHub</a>
+        &mdash; Add items by editing the files in <code>data/</code>.
+      </p>
+    </footer>
+
+  </div><!-- /.site-wrapper -->
+
+  <!-- Data files (order matters: loaded before JS modules that reference them) -->
+  <script src="data/base-weapons.js"></script>
+  <script src="data/base-items.js"></script>
+  <script src="data/magic-features.js"></script>
+  <script src="data/gun-features.js"></script>
+  <script src="data/item-features.js"></script>
+  <script src="data/drawbacks.js"></script>
+  <script src="data/stats.js"></script>
+
+  <!-- JS modules -->
+  <script src="js/random.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/generator.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
