@@ -139,6 +139,7 @@ function featureTypePrefix(type) {
     case "drawback": return "✖ ";
     case "ancient":  return "◈ ";
     case "shitty":   return "↓ ";
+    case "improved": return "↑ ";
     default:        return "";
   }
 }

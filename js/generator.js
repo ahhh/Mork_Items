@@ -56,6 +56,14 @@ function generateItem(options) {
     features.push({ type: "shitty", data: weightedPick(SHITTY_FEATURES) });
   }
 
+  // Improved quality — always applies when improved toggle is on
+  if (options.includeImproved) {
+    const eligible = filterImprovedFeatures(IMPROVED_FEATURES, base);
+    if (eligible.length > 0) {
+      features.push({ type: "improved", data: weightedPick(eligible) });
+    }
+  }
+
   // Drawback — always applies when curses toggle is on, never when off
   const drawbackEligible = base.curseAllowed !== false;
   if (drawbackEligible && options.includeCurses) {

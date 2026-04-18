@@ -9,6 +9,7 @@ function readOptions() {
     includeCurses: document.getElementById("cursesToggle").checked,
     includeAncient: document.getElementById("ancientToggle").checked,
     includeShitty: document.getElementById("shittyToggle").checked,
+    includeImproved: document.getElementById("improvedToggle").checked,
     itemType: document.querySelector('input[name="itemType"]:checked').value
   };
 }

@@ -56,3 +56,18 @@ function filterMagicFeatures(features, item) {
     f.allowedCategories.includes("all")
   );
 }
+
+/**
+ * Filter improved features to those compatible with the given item's category and type.
+ *
+ * @param {Array}  features  — IMPROVED_FEATURES array
+ * @param {Object} item
+ * @returns {Array} compatible improved features
+ */
+function filterImprovedFeatures(features, item) {
+  return features.filter(f => {
+    if (f.firearmOnly && !item.firearm) return false;
+    if (!f.allowedCategories) return true;
+    return f.allowedCategories.includes(item.category) || f.allowedCategories.includes("all");
+  });
+}
